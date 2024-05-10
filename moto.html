@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <div class = "home">
+        <div>
+        <head>
+            <title>Motorcyle</title>
+            <link rel = "stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        </head>
+        <body>
+            <h1 class="welcome">Select the options for your new ride!</h1>
+            <form method = "POST" action="/moto/{{username}}">
+                <div class="textBox">
+            <h4>Choose type:
+                <select id = "motoType" name = "motoType">
+                    <option></option>
+                    <option value = "Standard">Standard</option>
+                    <option value = "Cruiser">Cruiser</option>
+                    <option value = "Sport">Sport</option>
+                </select>
+            </h4>
+
+            <h4>Choose number of cylinders:
+                <select id = "motoCylinders" name  = "motoCylinders">
+                    <option></option>
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "4">4</option>
+                </select>
+            </h4>
+
+            <h4>Choose color:
+                <select id = "motoColor" name = "motoColor">
+                    <option></option>
+                    <option value = "White">White</option>
+                    <option value = "Black">Black</option>
+                    <option value = "Red">Red</option>
+                    <option value = "Blue">Blue</option>
+                    <option value = "Grey">Grey</option>
+                </select>
+            </h4>
+
+            <h4>Do you want to have a side car?
+                <select id = "motoSidecar" name = motoSidecar >
+                    <option></option>
+                    <option value = "yes">Yes</option>
+                    <option value = "no">No</option>
+                </select>
+            </h4>
+
+            <h4>Enter name of custom:<input type ="text" placeholder = "Custom name" id = "motoName" name = "motoName"></h4>
+
+            <form method="POST" action="/dummy2/{{username}}">
+                <button onclick="validate()" id = "saveMoto" name = "saveMoto">Save custom</button>
+            </form>
+
+            <script>
+                document.getElementById("saveMoto").onclick =
+                function validate()
+                {
+                    const motoType = document.getElementById("motoType").value;
+                    const motoCylinders = document.getElementById("motoCylinders").value;
+                    const motoColor = document.getElementById("motoColor").value;
+                    const motoSideCar = document.getElementById("motoSideCar").value;
+                    const motoName = document.getElementById("motoName").value;
+                    if(motoType == "" || motoCylinders == "" || motoColor == "" || motoSideCar == "" || motoName == "")
+                    {
+                        alert("One or more fields not selected!");
+                    }
+                    else
+                    {
+                        let arr = [motoType, motoCylinders, motoColor, motoSideCar, motoName];
+                    }
+                }
+            </script>
+
+        </body>
+        </div>
+    </form>
+</html>

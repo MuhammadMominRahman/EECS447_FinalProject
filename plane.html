@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Airplane</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="home">
+            <h1 class="selection">Select the options for your new air transportation!</h1>
+            <div class="forms">
+                <form method="POST" action="/plane/{{username}}">
+                    <div class="'textBox" id="formsub">
+                        <h4>Choose plane type:
+                            <select id="planeType" name="planeType">
+                                <option></option>
+                                <option value="Turbo Prop.">Turbo Prop.</option>
+                                <option value="Propeller">Propeller</option>
+                                <option value="Jet">Jet</option>
+                            </select>
+                        </h4>
+
+                        <h4>Select fuel type:
+                            <select id="planeFuel" name="planeFuel">
+                                <option></option>
+                                <option value="Jet">Jet Fuel</option>
+                                <option value="Electric">Electric</option>
+                            </select>
+                        </h4>
+
+                        <h4>Choose wing type:
+                            <select id="planeWing" name="planeWing">
+                                <option></option>
+                                <option value="Delta">Delta</option>
+                                <option value="Delta-Concord">Delta-Canard</option>
+                                <option value="Straight">Straight</option>
+                                <option value="Swept">Swept</option>
+                            </select>
+                        </h4>
+
+                        <h4>
+                            <label for="planeEngines">Enter number of engines less than or equal to 8</label>
+                            <input type="text" id="planeEngines" name="planeEngines">
+                        </h4>
+
+                        <h4>Choose color:
+                            <select id="planeColor" name="planeColor">
+                                <option></option>
+                                <option value="White">White</option>
+                                <option value="Black">Black</option>
+                                <option value="Red">Red</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Grey">Grey</option>
+                            </select>
+                        </h4>
+
+                        <h4>Enter name of custom:<input type="text" placeholder="Custom name" id="planeName" name="planeName"></h4>
+
+                        <button onclick="validate()" id="savePlane" name="savePlane">Save custom</button>
+                </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("savePlane").onclick = function validate() {
+                const planeType = document.getElementById("planeType").value;
+                const planeFuel = document.getElementById("planeFuel").value;
+                const planeWing = document.getElementById("planeWing").value;
+                const planeEngines = document.getElementById("planeEngines").value;
+                const planeColor = document.getElementById("planeColor").value;
+                const planeName = document.getElementById("planeName").value;
+
+                if (planeType == "" || planeFuel == "" || planeWing == "" || planeColor == "" || planeName == "") {
+                    alert("One or more fields not selected!");
+                } else if (planeEngines <= 0 || planeEngines > 8 || planeEngines == "") {
+                    alert("Number of engines not valid!");
+                } else {
+                    let arr = [planeType, planeFuel, planeWing, planeEngines, planeColor, planeName];
+                }
+            }
+        </script>
+    </body>
+</html>

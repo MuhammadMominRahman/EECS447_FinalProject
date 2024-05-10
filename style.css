@@ -1,0 +1,118 @@
+*{
+    font-family:roboto;
+    margin 0;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+    align: center;
+    box-sizing: border-box;
+}
+
+.selection
+{
+    position: absolute; /* Position the button relative to its closest positioned ancestor */
+    top: 0; /* Align the button to the top of its container */
+    left: 50%; /* Shift the button to the horizontal center */
+    transform: translateX(-50%); /* Adjust the button horizontally to center it */
+    padding: 1px 0;
+    width: 1000px;
+    background-color: white;
+    color: black;
+}
+
+.textBox
+{
+    align: bottom;
+    margin: 1px auto;
+    padding: 1px 0;
+    border: 3px solid black;
+    background: linear-gradient(to right, #007bff, #8a2be2); /* Blue to purple gradient */
+}
+.welcome
+{
+    color: black;
+    padding: 20px 0;
+    width: 1000px;
+    margin: 70px auto;
+    border: 3px solid white;
+    background-color: white;
+}
+
+input[type=text]
+{
+    padding: 10px 0;
+    width; 250px;
+    border: 3px solid white;
+}
+
+button[type=submit]
+{
+    padding: 20px;
+    width: 200px;
+    margin: 10px auto;
+}
+body
+{
+    min-height: 100vh;
+    background: linear-gradient(#e66465, #9198e5);
+}
+form
+{
+
+    width: 800px;
+    height:800;
+    padding: 75px 50px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+h1
+{
+    text-align:center;
+    margin-bottom: 45px;
+    color: white;
+    font-size: 40px;
+}
+
+.textBoxdiv
+{
+    border-bottom:2px solid white;
+    position: center;
+    margin:35px 0;
+}
+
+.customName
+{
+    margin: 10px auto;
+}
+
+#formsub
+{
+    margin: 10px auto;
+}
+
+h3
+{
+    color:burlywood;
+    text-align: center;
+    font-size: 50px;
+}
+.previousPage
+{
+    margin-top:20px;
+}
+table, th, td
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td
+{
+    padding:10px;
+}
+
+.forms
+{
+    color: white;
+}

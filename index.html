@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class = "background">
+        <h3 class="welcome">Welcome to O.P. Customs!</h3>
+    </div>
+        <form method="POST" action="/login">
+
+        <div class="textBox">
+            <h1>Login</h1>
+            <input type="text" class="username" placeholder="Username" name="username" id="Username">
+            <br>
+            <button type="submit" class="loginBtn" id="Login">Login</button>
+        </div>
+        <br>
+    </form>
+    <script>
+        // JavaScript for validation
+        document.getElementById("Login").onclick = function validate() {
+            const userName = document.getElementById("Username").value;
+
+
+            if (userName == "") {
+                alert("One or more fields is empty!");
+            }
+        }
+    </script>
+</body>
+</html>

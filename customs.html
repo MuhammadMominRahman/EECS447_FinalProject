@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title> {{username}}'s Customs </title>
+</head>
+<body>
+    <form method = "POST" action = "/customs/{{username}}">
+    <div>
+    <h1>Car Customs</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Custom Name</th>
+                <th>Car Size</th>
+                <th>Car Trim</th>
+                <th>Car Cylinders</th>
+                <th>Car Drivetrain</th>
+                <th>Car Transmission</th>
+                <th>Car Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car_custom in car_customs %}
+            <tr>
+                <td>{{ car_custom.custom_list_name }}</td>
+                <td>{{ car_custom.car_size }}</td>
+                <td>{{ car_custom.car_trim }}</td>
+                <td>{{ car_custom.car_cyl }}</td>
+                <td>{{ car_custom.car_dt }}</td>
+                <td>{{ car_custom.car_tr }}</td>
+                <td>{{ car_custom.car_color }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Moto Customs</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Custom Name</th>
+                <th>Moto Type</th>
+                <th>Moto Cylinders</th>
+                <th>Moto Color</th>
+                <th>Has Sidecar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for moto_custom in moto_customs %}
+            <tr>
+                <td>{{ moto_custom.custom_list_name }}</td>
+                <td>{{ moto_custom.moto_type }}</td>
+                <td>{{ moto_custom.moto_cyl }}</td>
+                <td>{{ moto_custom.moto_color }}</td>
+                <td>{{ moto_custom.has_sidecar }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Plane Customs</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Custom Name</th>
+                <th>Wing Type</th>
+                <th>Plane Fuel</th>
+                <th>Engine Type</th>
+                <th># of Engines</th>
+                <th>Plane Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plane_custom in plane_customs %}
+            <tr>
+                <td>{{ plane_custom.custom_list_name }}</td>
+                <td>{{ plane_custom.wing_type }}</td>
+                <td>{{ plane_custom.plane_fuel }}</td>
+                <td>{{ plane_custom.engine_type }}</td>
+                <td>{{ plane_custom.num_engines }}</td>
+                <td>{{ plane_custom.plane_color }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        <br>
+    </div>
+        <button type="submit" name="clear" value="clear" class="choice-btn">Clear All</button>
+        <button type="submit" name="return" value="return" class="choice-btn">Return to Home</button>
+    </form>
+</body>
+</html>

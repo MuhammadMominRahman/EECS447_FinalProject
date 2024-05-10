@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Car</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="home">
+        <h3 class="selection">Select the options for your new whip!</h3>
+        <div class="forms">
+            <form method="POST" action="/car/{{username}}">
+                <div class="textBox" id="formsub">
+                <h4>Choose car size:
+                    <select id="carSize" name="carSize">
+                        <option></option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Crossover">Crossover</option>
+                        <option value="Van">Van</option>
+                        <option value="Truck">Truck</option>
+                    </select>
+                </h4>
+
+                <h4>Choose car trim:
+                    <select id="carTrim" name="carTrim">
+                        <option></option>
+                        <option value="Base">Base</option>
+                        <option value="Limited">Limited</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Full">Full</option>
+                    </select>
+                </h4>
+
+                <h4>Choose number of cylinders:
+                    <select id="carCylinders" name="carCylinders">
+                        <option></option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                </h4>
+
+                <h4>Choose drivetrain:
+                    <select id="carDrivetrain" name="carDrivetrain">
+                        <option></option>
+                        <option value="FWD">FWD</option>
+                        <option value="RWD">RWD</option>
+                        <option value="AWD">AWD</option>
+                        <option value="4WD">4WD</option>
+                    </select>
+                </h4>
+
+                <h4>Choose transmission type:
+                    <select id="carTrans" name="carTrans">
+                        <option></option>
+                        <option value="Automatic">Automatic</option>
+                        <option value="Manual">Manual</option>
+                    </select>
+                </h4>
+
+                <h4>Choose color:
+                    <select id="carColor" name="carColor">
+                        <option></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Grey">Grey</option>
+                        <option value="Grey">Grey</option>
+                    </select>
+                </h4>
+
+                <h4>Enter name of custom: <input class="customName" type="text" placeholder="Custom name" id="carName" name="carName"></h4>
+                <form method="POST" action="/dummy/{{username}}">
+                    <button type="submit" onclick="validate()" id="saveCar" name="saveCar">Save custom</button>
+                </form>
+            </div>
+        </div>
+
+        </form>
+    </div>
+
+    <br>
+
+    <script>
+        document.getElementByID("saveCar").onclick = function validate() {
+            const carSize = document.getElementById("carSize").value;
+            const carTrim = document.getElementById("carTrim").value;
+            const carCylinders = document.getElementById("carCylinders").value;
+            const carDrivetrain = document.getElementById("carDrivetrain").value;
+            const carTrans = document.getElementById("carTrans").value;
+            const carColor = document.getElementById("carColor").value;
+            const carName = document.getElementById("carName").value;
+
+            if (carSize == "" || carTrim == "" || carCylinders == "" || carDrivetrain == "" || carTrans == "" || carColor == "" || carName == "") {
+                alert("One or more fields not selected!");
+            } else {
+                let arr = [carSize, carTrim, carCylinders, carDrivetrain, carTrans, carColor, carName];
+            }
+        }
+    </script>
+
+</body>
+
+</html>

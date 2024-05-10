@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Added Custom</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="home">
+        <div>
+            <h3>Successfully added the following:</h3>
+            <table>
+                <tr>
+                    <th>Custom Name</th>
+                    <th>Wing Type</th>
+                    <th>Engine Type</th>
+                    <th>Number of Engines</th>
+                    <th>Plane Color</th>
+                </tr>
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ wing_type }}</td>
+                    <td>{{ engine_type }}</td>
+                    <td>{{ num_engines }}</td>
+                    <td>{{ color }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div>
+        <form method="POST" action="/dummy3/{{username}}">
+            <button type="submit" name="return" value="return" class="choice-btn">Return to Home</button>
+        </form>
+    </div>
+</body>
+</html>

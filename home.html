@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <div class = "home">
+        <div>
+        <head>
+            <title>Home</title>
+            <link rel = "stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        </head>
+        <body>
+            <h3 class="welcome">Welcome to O.P. Customs {{content}}!</h3>
+        </div>
+    </div>
+    <form method="POST" action="/home/{{content}}">
+        <div class="textBox">
+        <h1>What would you like to make today?</h1>
+        <button type="submit" name="choice" value="Car" class="choice-btn">Car</button>
+        <button type="submit" name="choice" value="Motorcycle" class="choice-btn">Motorcycle</button>
+        <button type="submit" name="choice" value="Airplane" class="choice-btn">Airplane</button>
+        <br>
+        <h1>Other services</h1>
+        <button type="submit" name="choice" value="MyCustoms" class="choice-btn">My Customs</button>
+        <button type="submit" name="choice" value="Logout" class="choice-btn">Logout</button>
+        </div>
+    </form>
+
+    </body>
+</div>
+
+</html>
